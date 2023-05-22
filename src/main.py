@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from src.middleware.logging import LogMiddleware
+from starlette.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -16,3 +17,9 @@ def healtcheck() -> JSONResponse:
 # This is optional and just an example of how
 # to use middlewares in FastAPI
 app.add_middleware(LogMiddleware)
+
+
+# This is an example of how to serve static
+# content like non-templated HTML
+# When the app is running this should be viewable at http://localhost:<port>/www/
+app.mount("/www", StaticFiles(directory="www", html = True), name="www")
