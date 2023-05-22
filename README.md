@@ -29,3 +29,10 @@ After settting up the environment, running local tests would be a good first tes
 
 ## Running Locally No Container
 **WIP**
+
+
+## FAQ
+
+1. **Q:** Something went wrong in my containerized app, all I see is internal server error, how do I see what happened?
+
+    **A:** The logs are stored in error_log in the working directory of the container. First find the container_id with `$docker ps` , once you have that, start a terminal in that container with `$docker exec -it <container_id> /bin/bash` , lastly you can check the log with `$cat error_log`
