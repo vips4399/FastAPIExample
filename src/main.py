@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from src.middleware.logging import LogMiddleware
 from starlette.staticfiles import StaticFiles
+from src.routes.someroutesv1 import router
 
 app = FastAPI()
 
@@ -22,4 +23,9 @@ app.add_middleware(LogMiddleware)
 # This is an example of how to serve static
 # content like non-templated HTML
 # When the app is running this should be viewable at http://localhost:<port>/www/
-app.mount("/www", StaticFiles(directory="www", html = True), name="www")
+app.mount("/www", StaticFiles(directory="www", html=True), name="www")
+
+
+# This example adds routes defined in a router
+# These routes are in src/routes/someroutesv1.py
+app.include_router(router=router)

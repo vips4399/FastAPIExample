@@ -1,3 +1,4 @@
 venv/
 error_log
 access_log
+.coverage

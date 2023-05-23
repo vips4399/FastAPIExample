@@ -22,6 +22,11 @@ RUN pip install -r requirements.txt
 
 # Copy in source code
 FROM python_intermediate
+
+ENV ENVAR1="SomeURI"
+# Dont actaully put secrets in a dockerfile
+ENV ENVAR2="SomeSecret"
+
 WORKDIR /opt/myfastpayapi
 COPY . .
 EXPOSE 80
