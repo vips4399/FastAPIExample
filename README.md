@@ -26,14 +26,14 @@ After settting up the environment, running local tests would be a good first tes
 
 To run the unit tests after the dependencies are install and the environment is setup.
 
-`$pytest tests/ -v --cov=src`
+`$ pytest tests/ -v --cov=src`
 
 
 
 ## Running Locally No Container
 
 To run locally with no container
-`$gunicorn -c gunicorn_config.py src.main:app`
+`$ gunicorn -c gunicorn_config.py src.main:app`
 
 ## FAQ
 
