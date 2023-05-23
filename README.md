@@ -30,7 +30,7 @@ When the container is running, you should now be able to test that the health ro
 
 ``$ pipenv install --dev``
 
-# Running Tests
+## Running Tests
 
 After settting up the environment, running local tests would be a good first tests that everything is setup correctly.
 
@@ -41,6 +41,7 @@ To run the unit tests after the dependencies are install and the environment is 
 
 
 ## Running Locally No Container
+You must be in the pipenv shell.
 
 To run locally with no container
 `$ gunicorn -c gunicorn_config.py src.main:app`
