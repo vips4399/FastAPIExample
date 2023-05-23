@@ -1,6 +1,16 @@
 # FastAPI Example
 ### Python Version : 3.9
 
+# Included Routes
+    /health
+    /v1/route/echo_params/{path_param}?url_param={url_param}
+    /v1/route/dependency
+    /v1/route/echo_header
+
+# Static www
+
+    /www/index.html
+
 ## Running Locally as Container
 
 **Note : You must have docker installed for this to work, Pipenv is also generally suggested for local development**
