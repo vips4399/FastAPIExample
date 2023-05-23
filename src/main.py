@@ -6,11 +6,14 @@ from src.routes.someroutesv1 import router
 
 app = FastAPI()
 
-#  An Example of Simple Application Level Route
-#  This Example listens for GET requests on <host>/health
-#  and returns a JSONResponse with status_code 200 OK!
+
 @app.get("/health")
 def healtcheck() -> JSONResponse:
+    """
+    An Example of Simple Application Level Route
+    This Example listens for GET requests on <host>/health
+    and returns a JSONResponse with status_code 200 OK!
+    """
     return JSONResponse(status_code=200, content={"message": "health check OK!"})
 
 
