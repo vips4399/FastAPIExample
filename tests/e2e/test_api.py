@@ -34,3 +34,10 @@ def test_headers(test_client: TestClient):
 
     assert resp.status_code == 200
     assert resp.json() == {"ECHO-HEADER": "HELLO WORLD!"}
+
+def test_redirect(test_client: TestClient):
+    # test client automatically follows redirects so we aren't looking for a 300 response.
+    resp = test_client.get("/")
+
+    assert resp.status_code == 200
+    assert resp.url == "http://testserver/www/"
