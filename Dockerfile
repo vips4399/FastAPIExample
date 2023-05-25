@@ -3,7 +3,8 @@ FROM python:3.9-bullseye as python_base
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     nano \
-    curl 
+    curl \
+    net-tools
 
 RUN apt-get clean
 RUN python3.9 -m pip install pipenv
