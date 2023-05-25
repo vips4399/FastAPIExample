@@ -8,7 +8,7 @@ app = FastAPI(title="FastAPI Example", version=1.0)
 
 
 @app.get("/health")
-def healtcheck() -> JSONResponse:
+async def healtcheck() -> JSONResponse:
     """
     An Example of Simple Application Level Route
     This Example listens for GET requests on <host>/health
@@ -17,7 +17,7 @@ def healtcheck() -> JSONResponse:
     return JSONResponse(status_code=200, content={"message": "health check OK!"})
 
 @app.get("/")
-def re_route_to_static() -> RedirectResponse:
+async def re_route_to_static() -> RedirectResponse:
     """
     Redirect traffic on root to correct mount for static files.
     """

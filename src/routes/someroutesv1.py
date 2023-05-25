@@ -9,7 +9,7 @@ router = APIRouter(prefix="/v1/route")
 
 
 @router.get("/echo_path_param/{path_param}")
-def echo(
+async def echo(
     path_param: Optional[str],
     url_param: Optional[str],
 ) -> JSONResponse:
@@ -24,7 +24,7 @@ def echo(
 
 
 @router.get("/echo_header")
-def echo_header(Echo_Header: Annotated[Optional[str], Header()] = None):
+async def echo_header(Echo_Header: Annotated[Optional[str], Header()] = None):
     """
     this example shows how to deal with headers
     in fast API using the Header object
@@ -34,7 +34,7 @@ def echo_header(Echo_Header: Annotated[Optional[str], Header()] = None):
 
 
 @router.get("/dependency")
-def print_deps(config: Config = Depends(get_config)):
+async def print_deps(config: Config = Depends(get_config)):
     """
     this example shows how to use dependencies in
     fastAPI without introducing tight coupling, notice
