@@ -9,7 +9,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 RUN apt-get clean
 RUN python3.9 -m pip install pipenv
 
-
 # Copy in dependencies
 FROM python_base as python_intermediate
 
