@@ -1,0 +1,15 @@
+from typing import Optional, Annotated, Union, Tuple
+from fastapi import APIRouter, Depends, Header
+from fastapi.responses import JSONResponse
+from src.deps import get_config, Config
+
+
+Various Endpoints
+
+// Handler
+func hello(c echo.Context) error {
+  	return c.String(http.StatusOK, "Hello, World!")
+}
+
+// Route
+e.GET("/hello", hello)
